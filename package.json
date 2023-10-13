@@ -6,9 +6,10 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "test": "npx eslint index.js && echo \\\"Eslint:test performed\\\" && exit 1",
     "build:ui": "rm -rf build && cd ../frontend && npm run build && cp -r build ../backend",
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
+    "lint": "eslint ."
   },
   "repository": {},
   "author": "Matti Luukkainen",
@@ -21,6 +22,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "eslint": "^8.51.0",
     "nodemon": "^3.0.1"
   }
 }
